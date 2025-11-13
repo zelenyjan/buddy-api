@@ -1,6 +1,8 @@
 import { Hono } from 'hono'
+import { cors } from 'hono/cors'
 
 const app = new Hono();
+app.use('*', cors())
 
 // 1. GET /is-dosage-check
 app.get('/is-dosage-check', (c) => {
